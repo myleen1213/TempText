@@ -1,7 +1,5 @@
 package com.example.android.temptext.network
 
-package com.example.android.temptext.network
-
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -11,7 +9,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL = "https://api.weatherapi.com/v1/"
-
 
 private val networkLoggingInterceptor =
     HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -28,7 +25,7 @@ private val retrofit = Retrofit.Builder()
 
 interface WeatherApiService {
     ///alerts/active/area/{area}"
-    @GET("current.json?key=$WEATHER_KEY&q=NEW York&aqi=no")
+    @GET("current.json?key=$WEATHER_API_KEY&q=NEW York&aqi=no")
     suspend fun getCurrentWeather(): WeatherAlert
 }
 
