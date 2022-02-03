@@ -4,5 +4,6 @@ import com.squareup.moshi.Json
 import java.util.concurrent.locks.Condition
 
 class WeatherAlert (
-    @Json(name = "condition") val weatherCondition: String
+    @Json(name = "current") val currentWeather: String,
+    @Json(name = "location") val currentLocation: String
 )

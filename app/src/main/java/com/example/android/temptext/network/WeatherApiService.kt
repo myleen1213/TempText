@@ -10,6 +10,7 @@ import retrofit2.http.GET
 
 private const val BASE_URL = "https://api.weatherapi.com/v1/"
 
+
 private val networkLoggingInterceptor =
     HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
