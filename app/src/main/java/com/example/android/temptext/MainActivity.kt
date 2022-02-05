@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         val city = MutableLiveData<String?>()
         val currentWeather = MutableLiveData<String?>()
         val weatherIcon = MutableLiveData<String?>()
-        val condition = MutableLiveData<String>()
         val celsius = MutableLiveData<Float?>()
         val fahrenheit = MutableLiveData<Float?>()
 
