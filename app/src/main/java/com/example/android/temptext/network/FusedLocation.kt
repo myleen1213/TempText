@@ -3,6 +3,7 @@ package com.example.android.temptext.network
 import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
+import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.example.android.temptext.MainActivity
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -32,7 +33,7 @@ class FusedLocation {
             fusedLocationClient.lastLocation
                 .addOnSuccessListener { location: Location? ->
                     // Got last known location. In some rare situations this can be null.
-
+                Log.d("FusedLocation", location.toString())
                 }
             return
         }
