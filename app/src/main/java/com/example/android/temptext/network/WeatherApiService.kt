@@ -9,6 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.weatherapi.com/v1/"
 private const val API_KEY = BuildConfig.WEATHER_API_KEY
@@ -28,8 +29,8 @@ private val retrofit = Retrofit.Builder()
 
 interface WeatherApiService {
     ///alerts/active/area/{area}"
-    @GET("current.json?key=$API_KEY&q={area}&aqi=no")
-    suspend fun getCurrentWeather(@Path("area") location: String): WeatherResponse
+    @GET("current.json?key=$API_KEY&q={area}&aqi={aqi}")
+    suspend fun getCurrentWeather(@Path("area") location: String, @Path( "aqi") airQuality: String): WeatherResponse
 }
 
 object WeatherAlertApi{

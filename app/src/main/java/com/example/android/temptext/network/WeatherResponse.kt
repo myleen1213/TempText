@@ -15,7 +15,9 @@ class NestedWeatherResponse (
     @Json(name = "region") val state: String?,
     @Json(name = "localtime") val localTime: String?,
     @Json(name = "condition") val currentWeatherCondition: WeatherConditions?,
-    @Json(name = "is_day") val dayOfWeek: Int?
+    @Json(name = "is_day") val dayOfWeek: Int?,
+    @Json(name = "wind_mph") val windMph: Float?,
+    @Json(name = "precip_in") val precipitation: Float?,
 )
 
 class WeatherConditions (

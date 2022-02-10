@@ -8,6 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.android.temptext.network.WeatherAlertApi
 import kotlinx.coroutines.launch
 
+private const val API_KEY = BuildConfig.WEATHER_API_KEY
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,17 +24,15 @@ class MainActivity : AppCompatActivity() {
 
         try {
             lifecycleScope.launch {
-                city.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentLocation?.city
-                state.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentLocation?.state
-                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.currentWeatherCondition?.currentCondition
-                weatherIcon.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.currentWeatherCondition?.weatherIcon
-                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.celsius
-                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.fahrenheit
+                city.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentLocation?.city
+                state.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentLocation?.state
+                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentWeather?.currentWeatherCondition?.currentCondition
+                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentWeather?.celsius
+                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentWeather?.fahrenheit
 
                 Log.d("MainActivityCity",city.value.toString())
                 Log.d("MainActivityCity",state.value.toString())
                 Log.d("MainActivityWeather", currentWeather.value.toString())
-                Log.d("MainActivityIcon", weatherIcon.value.toString())
                 Log.d("MainActivityCel", celsius.value.toString())
                 Log.d("MainActivityFahr", fahrenheit.value.toString())
             }
