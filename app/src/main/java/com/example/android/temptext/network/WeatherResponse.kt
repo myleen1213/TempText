@@ -18,6 +18,8 @@ class NestedWeatherResponse (
     @Json(name = "is_day") val dayOfWeek: Int?,
     @Json(name = "wind_mph") val windMph: Float?,
     @Json(name = "precip_in") val precipitation: Float?,
+    @Json(name= "humidity") val humidity: String?
+
 )
 
 class WeatherConditions (
