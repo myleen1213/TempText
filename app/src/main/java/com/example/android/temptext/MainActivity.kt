@@ -18,9 +18,12 @@ class MainActivity : AppCompatActivity() {
         val city = MutableLiveData<String>()
         val state = MutableLiveData<String>()
         val currentWeather = MutableLiveData<String>()
-        val weatherIcon = MutableLiveData<String>()
         val celsius = MutableLiveData<Float>()
         val fahrenheit = MutableLiveData<Float>()
+        val humidity = MutableLiveData<String>()
+        val dayOfWeek = MutableLiveData<Int>()
+        val windMph = MutableLiveData<Float>()
+        val precipitation = MutableLiveData<Float>()
 
         try {
             lifecycleScope.launch {
@@ -29,6 +32,10 @@ class MainActivity : AppCompatActivity() {
                 currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentWeather?.currentWeatherCondition?.currentCondition
                 celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentWeather?.celsius
                 fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY","yes").currentWeather?.fahrenheit
+                humidity.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY", "yes").currentWeather?.humidity
+                dayOfWeek.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY", "yes").currentWeather?.dayOfWeek
+                windMph.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY", "yes").currentWeather?.windMph
+                precipitation.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY", "yes").currentWeather?.windMph
 
                 Log.d("MainActivityCity",city.value.toString())
                 Log.d("MainActivityCity",state.value.toString())
