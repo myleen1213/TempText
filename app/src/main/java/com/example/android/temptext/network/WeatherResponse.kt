@@ -5,7 +5,6 @@ import com.squareup.moshi.Json
 class WeatherResponse (
     @Json(name = "location") val currentLocation: NestedWeatherResponse?,
     @Json(name = "current") val currentWeather: NestedWeatherResponse?,
-
 )
 
 class NestedWeatherResponse (
@@ -18,8 +17,7 @@ class NestedWeatherResponse (
     @Json(name = "is_day") val dayOfWeek: Int?,
     @Json(name = "wind_mph") val windMph: Float?,
     @Json(name = "precip_in") val precipitation: Float?,
-    @Json(name= "humidity") val humidity: String?
-
+    @Json(name = "humidity") val humidity: String?
 )
 
 class WeatherConditions (
