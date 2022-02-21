@@ -29,11 +29,11 @@ private val retrofit = Retrofit.Builder()
 
 interface WeatherApiService {
     ///alerts/active/area/{area}"
-    @GET("current.json?key=$API_KEY&q=")
+    @GET("current.json?")
     //try @GET for just area. check retrofit site
     //so @Path(area=string)area:String?
-    suspend fun getCurrentWeather(@Query("q") area:String? = null, @Query("aqi") aqi: String?=null): WeatherResponse
-    
+    suspend fun getCurrentWeather(@Query("key") key:String? = null, @Query("q") query: String?=null, @Query("aqi") aqi: String? = null): WeatherResponse
+
 }
 
 object WeatherAlertApi{

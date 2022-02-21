@@ -24,18 +24,20 @@ class MainActivity : AppCompatActivity() {
         val dayOfWeek = MutableLiveData<Int>()
         val windMph = MutableLiveData<Float>()
         val precipitation = MutableLiveData<Float>()
+        val carbonMonoxide = MutableLiveData<Float>()
 
         try {
             lifecycleScope.launch {
-                city.value = WeatherAlertApi.retrofitService.getCurrentWeather("NY").currentLocation?.city
-                state.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentLocation?.state
-                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.currentWeatherCondition?.currentCondition
-                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.celsius
-                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.fahrenheit
-                humidity.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.humidity
-                dayOfWeek.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.dayOfWeek
-                windMph.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.windMph
-                precipitation.value = WeatherAlertApi.retrofitService.getCurrentWeather().currentWeather?.precipitation
+                city.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentLocation?.city
+                state.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentLocation?.state
+                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.currentWeatherCondition?.currentCondition
+                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.celsius
+                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.fahrenheit
+                humidity.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.humidity
+                dayOfWeek.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.dayOfWeek
+                windMph.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.windMph
+                precipitation.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.precipitation
+                carbonMonoxide.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.aqi?.carbonMonoxide
 
                 Log.d("MainActivityCity",city.value.toString())
                 Log.d("MainActivityRegion",state.value.toString())
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("MainActivityCel", celsius.value.toString())
                 Log.d("MainActivityFahr", fahrenheit.value.toString())
                 Log.d("MainActivityHumid", humidity.value.toString())
+                Log.d("MainActivityCO", carbonMonoxide.value.toString())
             }
         } catch (e: Exception) {
             "Failure: ${e.message}"
