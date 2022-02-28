@@ -12,7 +12,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.weatherapi.com/v1/"
-
+private const val API_KEY = BuildConfig.WEATHER_API_KEY
 //https://github.com/square/moshi#custom-type-adapters
 private val networkLoggingInterceptor =
     HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -29,8 +29,11 @@ private val retrofit = Retrofit.Builder()
 
 interface WeatherApiService {
     ///alerts/active/area/{area}"
-    @GET("current.json?key={key}&q={area}&aqi={aqi}")
-    suspend fun getCurrentWeather(@Query("key") apiKey: String, @Query("area") location: String, @Query( "aqi") airQuality: String): WeatherResponse
+    @GET("current.json?")
+    //try @GET for just area. check retrofit site
+    //so @Path(area=string)area:String?
+    suspend fun getCurrentWeather(@Query("key") key:String? = null, @Query("q") query: String?=null, @Query("aqi") aqi: String? = null): WeatherResponse
+
 }
 
 object WeatherAlertApi{
