@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
                 precipitation.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.precipitation!!
                 carbonMonoxide.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.aqi?.carbonMonoxide!!
 
-
                 Log.d("MainActivityCity",city.value.toString())
                 Log.d("MainActivityRegion",state.value.toString())
                 Log.d("MainActivityWeather", currentWeather.value.toString())
