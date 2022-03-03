@@ -90,10 +90,4 @@ class MainActivity : AppCompatActivity() {
             fusedLocation.getLastLocation()
         }
     }
-<<<<<<< HEAD
 }
-=======
-
-}
-
->>>>>>> 1fa9213ed68d8df28aed49d7cb86546a33a8cdf2
