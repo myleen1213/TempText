@@ -47,22 +47,22 @@ class MainActivity : AppCompatActivity() {
 
         try {
             lifecycleScope.launch {
-                city.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentLocation?.city
-                state.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentLocation?.state
-                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentWeather?.currentWeatherCondition?.currentCondition
-                weatherIcon.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentWeather?.currentWeatherCondition?.weatherIcon
-                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentWeather?.celsius
-                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentWeather?.fahrenheit
-                city.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentLocation?.city
-                state.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentLocation?.state
-                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.currentWeatherCondition?.currentCondition
-                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.celsius
-                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.fahrenheit
-                humidity.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.humidity
-                dayOfWeek.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.dayOfWeek
-                windMph.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.windMph
-                precipitation.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.precipitation
-                carbonMonoxide.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.aqi?.carbonMonoxide
+                city.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentLocation?.city!!
+                state.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentLocation?.state!!
+                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentWeather?.currentWeatherCondition?.currentCondition!!
+                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentWeather?.celsius!!
+                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY","no").currentWeather?.fahrenheit!!
+                city.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentLocation?.city!!
+                state.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentLocation?.state!!
+                currentWeather.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.currentWeatherCondition?.currentCondition!!
+                celsius.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.celsius!!
+                fahrenheit.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.fahrenheit!!
+                humidity.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.humidity!!
+                dayOfWeek.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.dayOfWeek!!
+                windMph.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.windMph!!
+                precipitation.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.precipitation!!
+                carbonMonoxide.value = WeatherAlertApi.retrofitService.getCurrentWeather(API_KEY,"NY", "yes").currentWeather?.aqi?.carbonMonoxide!!
+
 
                 Log.d("MainActivityCity",city.value.toString())
                 Log.d("MainActivityRegion",state.value.toString())
