@@ -8,7 +8,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+<<<<<<< HEAD
 import androidx.lifecycle.MutableLiveData
+=======
+>>>>>>> 1fa9213ed68d8df28aed49d7cb86546a33a8cdf2
 import androidx.lifecycle.lifecycleScope
 import com.example.android.temptext.network.WeatherAlertApi
 import kotlinx.coroutines.launch
@@ -16,7 +19,6 @@ import com.example.android.temptext.network.FusedLocation
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.CancellationTokenSource
-
 
 private const val API_KEY = BuildConfig.WEATHER_API_KEY
 
@@ -91,4 +93,10 @@ class MainActivity : AppCompatActivity() {
             fusedLocation.getLastLocation()
         }
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+
+>>>>>>> 1fa9213ed68d8df28aed49d7cb86546a33a8cdf2
