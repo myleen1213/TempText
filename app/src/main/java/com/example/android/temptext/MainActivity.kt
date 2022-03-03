@@ -8,12 +8,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.android.temptext.network.WeatherAlertApi
+import kotlinx.coroutines.launch
 import com.example.android.temptext.network.FusedLocation
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.CancellationTokenSource
-
-//private const val API_KEY = BuildConfig.WEATHER_API_KEY
 
 private const val API_KEY = BuildConfig.WEATHER_API_KEY
 
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
          * Instantiates Fused Location Provider
          */
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        /*
+        
         val city = MutableLiveData<String>()
         val state = MutableLiveData<String>()
         val currentWeather = MutableLiveData<String>()
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             }
         } catch (e: Exception) {
             "Failure: ${e.message}"
-        }*/
+        }
     }
 
     override fun onStart() {
