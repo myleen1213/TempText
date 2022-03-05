@@ -1,21 +1,15 @@
 package com.example.android.temptext
 
-import android.Manifest
-import android.Manifest.permission.ACCESS_COARSE_LOCATION
-import android.annotation.SuppressLint
-import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
-import com.example.android.temptext.network.WeatherAlertApi
-import kotlinx.coroutines.launch
 import com.example.android.temptext.network.FusedLocation
+import com.example.android.temptext.network.WeatherAlertApi
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.tasks.CancellationTokenSource
+import kotlinx.coroutines.launch
 
 private const val API_KEY = BuildConfig.WEATHER_API_KEY
 
