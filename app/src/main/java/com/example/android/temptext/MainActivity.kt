@@ -16,6 +16,7 @@ private const val API_KEY = BuildConfig.WEATHER_API_KEY
 class MainActivity : AppCompatActivity() {
     /**
      * Provides the entry point to the Fused Location Provider API.
+     * FusedLocationProviderClient - Main class for receiving location updates.
      */
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
